@@ -1,0 +1,1 @@
+npm install nanoid@3.x.x

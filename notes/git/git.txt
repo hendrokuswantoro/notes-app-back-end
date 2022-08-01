@@ -1,0 +1,8 @@
+git --version
+
+
+//Untuk menetapkan email di git, eksekusi perintah berikut pada PowerShell/CMD/Terminal
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"  
+
+git init

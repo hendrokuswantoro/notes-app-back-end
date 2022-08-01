@@ -1,0 +1,10 @@
+npm install eslint --save-dev
+
+npx eslint --init
+
+npx eslint  .  --fix
+
+nodemon ./src/server.js
+npx eslint --fix ./src
+
+shift + alt + f //merapikan koding
