@@ -1,0 +1,9 @@
+//commit 
+git add .
+git commit -m "fix bugs host value"
+
+
+//push perubahannya pada remote repository 
+git push origin master 
+
+git pull origin master

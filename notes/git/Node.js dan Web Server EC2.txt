@@ -1,0 +1,18 @@
+//buka Terminal/CMD/PowerShell baru, jalankan 
+node -v
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+//keluar dari SSH dengan perintah 
+exit
+
+nvm install <versi nodejs> mis.  v14.15.4
+
+//masuk ke folder
+cd notes-app-back-end
+
+//Lalu, pasang seluruh module/package dependencies dengan mengeksekusi perintah 
+npm install
+
+//Lanjut, jalankan proyek dengan perintah 
+npm run star
