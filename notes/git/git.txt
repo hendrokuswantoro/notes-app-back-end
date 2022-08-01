@@ -19,3 +19,9 @@ git push -u origin main
 git remote add origin https://github.com/hendrokuswantoro/notes-app-back-end.git
 git branch -M main
 git push -u origin main
+
+
+//Jika gagal, berarti git belum terpasang. Anda dapat dengan mudah memasang sistem git pada Ubuntu dengan perintah
+sudo apt-get install git 
+
+git clone https://github.com/dimasmd/notes-app-back-end.git
