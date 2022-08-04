@@ -1,0 +1,8 @@
+http://localhost:5000/notes method POST
+
+{
+    "status": "success",
+    "data": {
+        "noteId": "L_AafUI-nBO_TxKg"
+    }
+}

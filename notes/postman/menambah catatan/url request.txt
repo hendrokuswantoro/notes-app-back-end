@@ -1,0 +1,3 @@
+localhost:5000/notes dengan method POST
+
+npm run start-dev //perintah pada terminal

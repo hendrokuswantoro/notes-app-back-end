@@ -1,10 +1,9 @@
-// eslint-disable-next-line import/no-unresolved, import/no-import-module-exports
-import { nanoid } from 'nanoid';
-// eslint-disable-next-line object-curly-newline, import/no-import-module-exports
-import { notes, push, filter, findIndex, splice } from './notes';
+// eslint-disable
+const { nanoid } = require('nanoid');
+const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
-  const { title, tags, body } = request.payload;
+  const { title = 'untitled', tags, body } = request.payload;
 
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
@@ -19,12 +18,13 @@ const addNoteHandler = (request, h) => {
     updatedAt,
   };
 
-  push(newNote);
+  notes.push(newNote);
 
-  const isSuccess = filter((note) => note.id === id).length > 0;
+  const isSuccess = notes.filter((note) => note.id === id).length > 0;
 
   if (isSuccess) {
     const response = h.response({
+      error: false,
       status: 'success',
       message: 'Catatan berhasil ditambahkan',
       data: {
@@ -32,6 +32,7 @@ const addNoteHandler = (request, h) => {
       },
     });
     response.code(201);
+    response.header('Acces-Control-Allow-Origin', '*');
     return response;
   }
   const response = h.response({
@@ -52,11 +53,11 @@ const getAllNotesHandler = () => ({
 const getNoteByIdHandler = (request, h) => {
   const { id } = request.params;
 
-  const note = filter((n) => n.id === id)[0];
+  const note = notes.filter((n) => n.id === id)[0];
 
   if (note !== undefined) {
     return {
-      status: 'succes',
+      status: 'success',
       data: {
         note,
       },
@@ -77,7 +78,7 @@ const editNoteByIdHandler = (request, h) => {
   const { title, tags, body } = request.payload;
   const updatedAt = new Date().toISOString();
 
-  const index = findIndex((note) => note.id === id);
+  const index = notes.findIndex((note) => note.id === id);
 
   if (index !== -1) {
     notes[index] = {
@@ -107,10 +108,10 @@ const editNoteByIdHandler = (request, h) => {
 const deleteNoteByIdHandler = (request, h) => {
   const { id } = request.params;
 
-  const index = findIndex((note) => note.id === id);
+  const index = notes.findIndex((note) => note.id === id);
 
   if (index !== -1) {
-    splice(index, 1);
+    notes.splice(index, 1);
     const response = h.response({
       status: 'success',
       message: 'Catatan berhasil dihapus',

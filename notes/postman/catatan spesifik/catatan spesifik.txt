@@ -1,0 +1,26 @@
+http://localhost:5000/notes/abababab method GET
+
+{
+    "status": "fail",
+    "message": "Catatan tidak ditemukan"
+}
+
+================================================
+http://localhost:5000/notes/CtpV7WFyFWrLRu5u
+
+{
+    "status": "succes",
+    "data": {
+        "note": {
+            "title": "Catatan A",
+            "tags": [
+                "Android",
+                "Web"
+            ],
+            "body": "Isi dari catatan A",
+            "id": "CtpV7WFyFWrLRu5u",
+            "createdAt": "2022-08-03T12:05:39.714Z",
+            "updatedAt": "2022-08-03T12:05:39.714Z"
+        }
+    }
+}
