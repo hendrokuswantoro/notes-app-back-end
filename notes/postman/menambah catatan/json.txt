@@ -1,5 +1,0 @@
-{
-    "title": "Catatan A",
-    "tags": ["Android", "Web"],
-    "body": "Isi dari catatan A"
-}

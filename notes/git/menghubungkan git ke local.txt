@@ -1,4 +1,0 @@
-git remote add origin https://github.com/dimasmd/notes-app-back-end.git 
-
-untuk mengunggahnya sendiri, lakukan dengan perintah:
-git push origin main
